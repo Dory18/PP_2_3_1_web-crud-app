@@ -23,6 +23,7 @@ public class UserServiceImpl implements UserService {
 
     }
 
+    @Transactional
     @Override
     public void deleteById(long id) {
         userDao.deleteById(id);
@@ -33,11 +34,13 @@ public class UserServiceImpl implements UserService {
         return userDao.findAll(count);
     }
 
+    @Transactional
     @Override
     public void save(User user) {
         userDao.save(user);
     }
 
+    @Transactional
     @Override
     public void updateById(User user) {
         userDao.updateById(user);
